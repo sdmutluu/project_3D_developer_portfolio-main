@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PresentationControls, Html, Preload, useGLTF,  } from "@react-three/drei";
+import "./html.css"
 
 
 import CanvasLoader from "../Loader";
@@ -66,10 +67,11 @@ const ComputersCanvas = () => {
     <Suspense fallback={<CanvasLoader />}>
       <OrbitControls
         enableZoom={false}
-        maxPolarAngle={Math.PI / 36}
+        maxPolarAngle={Math.PI / 45}
         minPolarAngle={Math.PI / 3}
-        maxAzimuthAngle={Math.PI / 36} // Y ekseni etrafında maksimum dönme açısı (45 derece)
-        minAzimuthAngle={-Math.PI / 36} // Y ekseni etrafında minimum dönme açısı (-45 derece)
+        maxAzimuthAngle={Math.PI / 45} // Y ekseni etrafında maksimum dönme açısı (45 derece)
+        minAzimuthAngle={-Math.PI / 45} // Y ekseni etrafında minimum dönme açısı (-45 derece)
+        enablePan={true}
       />
 
       <Computers isMobile={isMobile} />
